@@ -29,7 +29,7 @@ describe('Modal', function () {
       </Modal>
     , mountPoint);
 
-    assert.equal(ReactDOM.findDOMNode(instance.refs.modal).querySelectorAll('strong').length, 1);
+    assert.equal(instance.refs.modal.querySelectorAll('strong').length, 1);
   });
 
   it('Should disable scrolling on the modal container while open', function() {
@@ -57,7 +57,7 @@ describe('Modal', function () {
 
     let instance = render(<Container />, mountPoint);
     let modal = ReactTestUtils.findRenderedComponentWithType(instance, Modal);
-    let backdrop = ReactDOM.findDOMNode(modal.refs.backdrop);
+    let backdrop = modal.refs.backdrop;
 
     expect($(instance).css('overflow')).to.equal('hidden');
 
@@ -92,7 +92,7 @@ describe('Modal', function () {
 
     let instance = render(<Container />, mountPoint);
     let modal = ReactTestUtils.findRenderedComponentWithType(instance, Modal);
-    let backdrop = ReactDOM.findDOMNode(modal.refs.backdrop);
+    let backdrop = modal.refs.backdrop;
 
     expect($(instance).hasClass('test test2')).to.be.true;
 
@@ -109,7 +109,7 @@ describe('Modal', function () {
       </Modal>
     , mountPoint);
 
-    let backdrop = ReactDOM.findDOMNode(instance.refs.backdrop);
+    let backdrop = instance.refs.backdrop;
 
     ReactTestUtils.Simulate.click(backdrop);
 
@@ -124,7 +124,7 @@ describe('Modal', function () {
       </Modal>
     , mountPoint);
 
-    let backdrop = ReactDOM.findDOMNode(instance.refs.backdrop);
+    let backdrop = instance.refs.backdrop;
 
     ReactTestUtils.Simulate.click(backdrop);
   });
@@ -137,7 +137,7 @@ describe('Modal', function () {
       </Modal>
     , mountPoint);
 
-    let backdrop = ReactDOM.findDOMNode(instance.refs.backdrop);
+    let backdrop = instance.refs.backdrop;
 
     ReactTestUtils.Simulate.click(backdrop);
 
@@ -152,7 +152,7 @@ describe('Modal', function () {
       </Modal>
     , mountPoint);
 
-    let backdrop = ReactDOM.findDOMNode(instance.refs.backdrop);
+    let backdrop = instance.refs.backdrop;
 
     simulant.fire(backdrop, 'keyup', { keyCode: 27 });
   });
@@ -166,7 +166,7 @@ describe('Modal', function () {
       </Modal>
     , mountPoint);
 
-    let backdrop = ReactDOM.findDOMNode(instance.refs.backdrop);
+    let backdrop = instance.refs.backdrop;
 
     expect(
       backdrop.style.borderWidth).to.equal('3px');
