@@ -63,9 +63,9 @@ let Portal = React.createClass({
     // Save reference for future access.
     if (overlay !== null) {
       this._mountOverlayTarget();
-
-      this._overlayInstance = ReactDOM
-        .unstable_renderSubtreeIntoContainer(this, overlay, this._overlayTarget);
+      this._overlayInstance = ReactDOM.unstable_renderSubtreeIntoContainer(
+        this, overlay, this._overlayTarget
+      );
     } else {
       // Unrender if the component is null for transitions to null
       this._unrenderOverlay();
