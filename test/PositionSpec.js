@@ -58,7 +58,7 @@ describe('Position', function () {
               <div ref="bar" />
 
               <Position
-                target={() => ReactDOM.findDOMNode(this.refs[this.state.target])}
+                target={() => this.refs[this.state.target]}
                 fakeProp={this.state.fakeProp}
               >
                 <div />
@@ -136,7 +136,7 @@ describe('Position', function () {
               }}/>
 
               <Position
-                target={() => ReactDOM.findDOMNode(this.refs.target)}
+                target={() => this.refs.target}
                 container={this}
                 containerPadding={50}
                 placement={placement}
